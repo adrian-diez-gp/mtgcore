@@ -1,0 +1,134 @@
+#perfil-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10vw;
+    width: -webkit-fill-available;
+}
+
+#datos-personales-article-wrapper{
+    background-color: #EEE;
+    width: calc(50vw - 250px);
+    text-align: center;
+}
+
+#perfil-title{
+
+}
+
+#perfil-lista-datos{
+    list-style-type: none;
+    padding-left: 3rem;
+}
+
+#perfil-lista-datos > li{
+    padding: 3rem;
+}
+
+
+#perfil-torneos-article-wrapper{
+    background-color: #EEE;
+    width: calc(50vw - 250px);
+    text-align: center;
+}
+
+#perfil-lista-torneos{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#perfil-lista-torneos > li{
+    padding: 2.5rem;
+    margin: 0 2.5rem;
+    background-color: #1F1C34;
+    border: 1px solid #F07070;
+    border-radius: 1rem;
+    color: #EEE;
+}
+
+#torneos-wrapper {
+    width: calc(50vw - 100px);
+}
+
+#perfilForm {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#perfilForm li {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#perfilForm .input-container {
+    position: relative;
+    width: 90%;
+    display: flex;
+}
+
+#perfilForm label {
+    font-size: 14px;
+}
+
+#perfilForm input, #perfilForm select, #perfilForm textarea {
+    width: calc(100% - 40px); 
+    padding: 10px 5px;
+    box-sizing: border-box;
+    background-color: rgba(239, 239, 239, 0.3);
+    border: none;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.8);
+    font-size: 16px;
+    color: black;
+    margin-top: 5px; 
+}
+
+#perfilForm input:focus {
+    outline: none;
+    background-color: white !important;
+}
+
+#perfilForm .input-editable {
+    background-color: white !important;
+}
+
+#perfilForm .see-pwd-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-10%) translateX(-100%);
+    cursor: pointer;
+}
+
+
+#perfilForm .actualizar-pwd-btn {
+    transform: translateX(50%);
+    margin-top: 1rem;
+}
+
+#perfilForm .see-pwd-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+
+#perfilForm button {
+    background-color: #d1b58a2a;
+    border: 1px solid #D1B58A; 
+    color: #a58f6d; 
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    max-height: 3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-left: 10px;
+}
+
+#perfilForm button:hover {
+    background-color: #D1B58A; 
+    color: rgba(255, 255, 255, 1); 
+}

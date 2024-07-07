@@ -1,0 +1,98 @@
+body {
+    background-color: #1F1C34;
+}
+
+#cta {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    box-shadow: inset 0px 0px 7px 3px #1f1c34;
+    color: #1f1c34;
+    font-weight: 800;
+    height: 50vh;
+}
+
+#cta:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background:url("../assets/magic-the-gathering-eldrazi.jpg");    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.5);
+}
+
+#middle-section {
+    width: 80vw;
+    background-color: #dddddd;
+    margin: 2rem auto 10rem auto;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #0a0a0a;
+    color: #eee;
+    display: flex;
+    gap: 10rem;
+    width: 100vw;
+    padding: 0 3rem;
+    margin-top: 5vh;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.gap-5 {
+    gap: 5rem;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+.centered {
+    margin: 2rem auto;
+}
+
+.title-large {
+    font-size: 2rem;
+}
+
+.title-large, .subtitle-large {
+    font-weight: 900;
+    background: radial-gradient(circle, #d1b58a 0%, #9a23da00 100%);
+}
+
+.cta-btn {
+    margin-top: -35px;
+    padding: 0.5rem 1rem;
+    background-color: #0a0a0a;
+    border: 2px solid #F07070;
+    border-radius: 100px;
+}
+
+.cta-btn a {
+    text-decoration: none;
+    color: #d1b58a;
+}

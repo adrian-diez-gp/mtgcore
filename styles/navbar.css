@@ -1,0 +1,77 @@
+#navbar-wrapper {
+    position: relative;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    display: flex;
+    align-items: end;
+    height: 3rem;
+}
+
+#navbar {
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+}
+
+#navbar > ul {
+    display: flex;
+    margin: 0 ;
+    padding: 0;
+    gap: 5vw;
+    list-style-type: none;
+}
+
+#admin-dropdown-container > li {
+    list-style-type: none;
+    padding-bottom: 0.5rem;
+}
+
+#navbar li:hover, #admin-dropdown-container li:hover{
+    color: #D1B58A;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#navbar-wrapper > .login-btn {
+    height: 2rem;
+    width: 5rem;
+    background-color: #F07070;
+    border: 2px solid #D1B58A;
+    color: #f0f0f0;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn > span {
+    margin-bottom: 3px;
+
+}
+
+#navbar .selected {
+    font-size: large;
+    color: #D1B58A !important;
+    text-decoration: underline;
+    text-decoration-color:#D1B58A;
+    text-decoration-thickness: 3px;
+}
+
+#navbar-wrapper a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+#admin-dropdown-container {
+    position: absolute;
+    display: none;
+    z-index: 1000; 
+    padding: 0.5rem;
+    background-color: #0a0a0a;
+    border-radius: 8%;
+}
+
+.admin-tab:hover + #admin-dropdown-container {
+    display: block; 
+}

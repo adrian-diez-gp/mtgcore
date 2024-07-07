@@ -1,0 +1,20 @@
+#banner-actualizado, #banner-creado, #banner-eliminado {
+    width: 95vw;
+    height: 10vh;
+    border-radius: 1rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 1.5rem;
+    border: 2px solid #D1B58A;
+}
+
+#banner-actualizado, #banner-creado {
+    background-color: #5cc661;
+}
+
+#banner-eliminado {
+    background-color: #F07070;
+}

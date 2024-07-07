@@ -1,0 +1,99 @@
+.login-action-wrapper {
+    margin-right: 5%;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+
+#loginForm, #registerForm {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#loginForm li, #registerForm li {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#loginForm label, #registerForm label, #crear-usuario-form label {
+    font-size: 14px;
+}
+
+#loginForm input, #registerForm input, #crear-usuario-form input {
+    width: calc(100% - 40px); 
+    padding: 10px 5px;
+    box-sizing: border-box;
+    background-color: rgba(239, 239, 239, 0.5);
+    border: none;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.8);
+    font-size: 16px;
+    color: black;
+    margin-top: 5px; 
+}
+
+#loginForm input:focus, #registerForm input:focus, #crear-usuario-form input:focus {
+    outline: none;
+    background-color: white !important;
+}
+
+#loginForm .see-pwd-icon, #registerForm .see-pwd-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-10%) translateX(-100%);
+    cursor: pointer;
+}
+
+#loginForm .see-pwd-icon img, #registerForm .see-pwd-icon img{
+    width: 24px;
+    height: 24px;
+}
+
+#loginForm button, #registerForm button, #crear-usuario-form button {
+    background-color: #d1b58a2a;
+    border: 1px solid #D1B58A; 
+    color: #a58f6d; 
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    max-height: 3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-right: 5%;
+    text-align: center;
+    margin-left:30%;
+    margin-top:2vh;
+}
+
+#loginForm button:hover, #registerForm button:hover, #crear-usuario-form button:hover {
+    background-color: #D1B58A; 
+    color: rgba(255, 255, 255, 1); 
+}
+
+#loginForm .input-container, #registerForm .input-container {
+    position: relative;
+}
+
+#loginForm .see-pwd-icon, #registerForm .see-pwd-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateX(-150%);
+    cursor: pointer;
+}
+
+#loginForm .see-pwd-icon img, #registerForm .see-pwd-icon img {
+    width: 24px;
+    height: 24px;
+}
