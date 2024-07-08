@@ -16,7 +16,7 @@ const toggleTournamentEdition = (idTorneo) => {
     tournamentEditionBtn.style.display = 'none'
 }
 
-const buscarUsuarios = (value, idTorneo) => {
+const buscarUsuarios = (value, idTorneo, fecha) => {
     const searchResults = document.getElementById('searchResults-' + idTorneo)
         if (value.trim() === '') {
             searchResults.innerHTML = ' '
@@ -32,7 +32,7 @@ const buscarUsuarios = (value, idTorneo) => {
             }
         };
         
-        xhr.send('query=' + encodeURIComponent(value) + '&idTorneo=' + encodeURIComponent(idTorneo));
+        xhr.send('query=' + encodeURIComponent(value) + '&idTorneo=' + encodeURIComponent(idTorneo) + '&fecha=' + fecha);
     
 }
 
@@ -63,7 +63,7 @@ const buscarTorneos = (value) => {
     xhr.send('query=' + encodeURIComponent(value));
 }
 
-const inscribirUsuario = (idUser, idTorneo) => {
+const inscribirUsuario = (idUser, idTorneo, fecha) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../handlers/inscribir_usuario_handler.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -74,10 +74,10 @@ const inscribirUsuario = (idUser, idTorneo) => {
         }
     };
 
-    xhr.send('idUser=' + idUser + '&idTorneo=' + idTorneo);
+    xhr.send('idUser=' + idUser + '&idTorneo=' + idTorneo + '&fecha=' + fecha);
 }
 
-const borrarInscripcion = (idUser, idTorneo) => {
+const borrarInscripcion = (idUser, idTorneo, fecha) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../handlers/borrar_inscripcion_handler.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -88,7 +88,7 @@ const borrarInscripcion = (idUser, idTorneo) => {
         }
     };
 
-    xhr.send('idUser=' + idUser + '&idTorneo=' + idTorneo);
+    xhr.send('idUser=' + idUser + '&idTorneo=' + idTorneo + '&fecha=' + fecha);
 }
 
 const editarTorneo = () => {

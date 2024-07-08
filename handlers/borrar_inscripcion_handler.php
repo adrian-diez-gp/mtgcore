@@ -8,11 +8,19 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $idUser = trim($_POST['idUser']);
         $idTorneo = trim($_POST['idTorneo']);
+        $fecha = $_POST['fecha'];
 
-        if (!empty($idUser) && !empty($idTorneo)) {
-            DB::borrarInscripcion($idUser, $idTorneo);
-            setcookie('eliminado', 1, time() + 5, '/');
-        } else {
+        $fecha_hoy = new DateTime();
+        $fecha_torneo    = new DateTime($fecha);
+
+        if (!empty($idUser) && !empty($idTorneo) && !empty($fecha)) {
+            if ($fecha_torneo > $fecha_hoy) {
+                DB::borrarInscripcion($idUser, $idTorneo);
+                setcookie('eliminado', 1, time() + 5, '/');
+            }else{
+                setcookie('error', 1, time() + 5, '/');
+            }
+            } else {
             echo "Los campos no pueden quedar vacíos.";
         }
     }

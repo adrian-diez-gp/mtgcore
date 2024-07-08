@@ -15,6 +15,13 @@
     $navbarItems = array('home','noticias','registro','login');
     include_once("../components/navbar.php");
     ?>
+        <?php if(isset($_COOKIE['error']) && $_COOKIE['error'] == 1): 
+        setcookie('error', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+        USERNAME O CONTRASEÑA INCORRECTOS. POR FAVOR, INTÉNTALO DE NUEVO.
+        </div>
+    <?php endif; ?>
         <section id="middle-section">
            <div class="form-wrapper">
                 <form id="loginForm" action="../handlers/login_handler.php" method="POST">
@@ -25,7 +32,7 @@
                         <input type="password" name="password" id="password" required>
                         <div class="see-pwd-icon" onmousedown="seePassword()" onmouseup="hidePassword()"><img src="../assets/see-password.png"/></div>
                     </div>
-                    <button type="submit" onclick="login()" style="margin-left:30%; margin-top:2vh;">Entrar</button>
+                    <button type="submit" style="margin-left:30%; margin-top:2vh;">Entrar</button>
                 </form>
                 <div class="login-action-wrapper">
                     <span>

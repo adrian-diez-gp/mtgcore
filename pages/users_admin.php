@@ -8,6 +8,27 @@
 <link rel="stylesheet" href="../styles/login.css">
 
 <body>
+<?php if(isset($_COOKIE['creado']) && $_COOKIE['creado'] == 1): 
+           setcookie('creado', 0, time() - 3600);
+            ?>
+        <div id="banner-creado" style="display:none;">
+            USUARIO CREADO.
+        </div>
+        <?php endif ?>
+        <?php if(isset($_COOKIE['actualizado']) && $_COOKIE['actualizado'] == 1): 
+        setcookie('actualizado', 0, time() - 3600);
+    ?>
+        <div id="banner-actualizado">
+            EL USUARIO HA SIDO ACTUALIZADO.
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['eliminado']) && $_COOKIE['eliminado'] == 1): 
+        setcookie('eliminado', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+        EL USUARIO HA SIDO BORRADO CORRECTAMENTE.
+        </div>
+    <?php endif; ?>
 <div class="body-wrapper">
     <?php
     $crumb = $crumb;
@@ -15,14 +36,6 @@
     ?>
     <section id="middle-section">
         <h1>USUARIOS</h1>
-        <?php if(isset($_COOKIE['creado']) && $_COOKIE['creado'] == 1): 
-           setcookie('creado', 0, time() - 3600);
-            ?>
-        <div id="banner-creado" style="display:none;">
-            USUARIO CREADO.
-        </div>
-        <?php endif ?>
-
         <div id="crear-usuarios">
             <h3>CREAR USUARIO</h3>
                 <form id="crear-usuario-form" action="../handlers/registro_handler.php" method="POST">
@@ -44,7 +57,7 @@
                     <label for="apellidos">Apellidos</label>
                     <input type="apellidos" name="apellidos" id="apellidos" required/>
                     <button type="submit" value="Registrarse">
-                    Crear usuario
+                        Crear usuario
                     </button>
                 </form>
            </div>

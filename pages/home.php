@@ -6,6 +6,13 @@
 ?>
 </head>
 <body>
+    <?php if(isset($_COOKIE['creado']) && $_COOKIE['creado'] == 1): 
+        setcookie('creado', 0, time() - 3600);
+    ?>
+        <div id="banner-creado">
+            LOGIN CORRECTO! BIENVENIDO!
+        </div>
+    <?php endif; ?>
     <div class="body-wrapper">
     <header>
     <?php

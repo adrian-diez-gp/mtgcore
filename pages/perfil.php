@@ -27,10 +27,17 @@
             TE HAS BORRADO DEL TORNEO.
         </div>
     <?php endif; ?>
+    <?php if(isset($_COOKIE['error']) && $_COOKIE['error'] == 1): 
+        setcookie('error', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+        ESTE TORNEO YA SE HA JUGADO. POR FAVOR, ESCOGE OTRO.
+        </div>
+    <?php endif; ?>
     <div class="body-wrapper">
     <?php
-    $crumb = $crumb;
-    include_once("../components/navbar.php");
+        $crumb = $crumb;
+        include_once("../components/navbar.php");
     ?>
 
     <section id="middle-section">
@@ -57,8 +64,6 @@
                                 echo '<label for="perfil-username">Nombre de usuario</label>';
                                 echo '<div class="input-container">';
                                 echo '<input type="text" name="perfil-username" id="perfil-username" value="' . $user['usuario'] . '" disabled/>';
-                                echo '<button type="button" id="editar-perfil-username">Editar</button>';
-                                echo '<button type="button" id="guardar-perfil-username" style="display:none;">Guardar</button>';
                                 echo '</div>';
                                 echo '</li>';
 

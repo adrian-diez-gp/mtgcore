@@ -8,6 +8,30 @@
     margin-left: 5rem;
 }
 
+.tournament-edition-div input{
+    padding: 10px 5px;
+    box-sizing: border-box;
+    background-color: rgba(239, 239, 239, 0.25);
+    border: none;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.8);
+    font-size: 16px;
+    color:#D1B58A;
+    margin: 0.5rem 0;
+}
+
+.tournament-edition-div button {
+    padding: 10px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #d1b58a2a;
+    border: 1px solid #D1B58A; 
+    color: #a58f6d; 
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1rem 0;
+}
+
 .crear-torneo {
     background-color: #b2e09f;
     font-weight: 600;
@@ -40,7 +64,7 @@
 
 .tournament-header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .tournament-header > button {
@@ -59,7 +83,7 @@
     display: flex;
     justify-content: space-between;
     height: 2rem;
-    padding: 0 1rem;
+    padding: 1rem 0;
     margin-bottom: 20px;
     color: #D1B58A;
 }

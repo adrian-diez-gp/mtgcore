@@ -28,19 +28,17 @@ const guardarUsuario = (idUser) => {
 }
 
 const actualizarUsuario = (idUser) => {
-    // Get the new values from the input fields
-    const newUsername = document.getElementById(`newUsername-${idUser}`).value;
-    const newNombre = document.getElementById(`newNombre-${idUser}`).value;
-    const newApellidos = document.getElementById(`newApellidos-${idUser}`).value;
+    const newUsername = document.getElementById(`newUsername-${idUser}`).value
+    const newNombre = document.getElementById(`newNombre-${idUser}`).value
+    const newApellidos = document.getElementById(`newApellidos-${idUser}`).value
 
-    // Create an AJAX request to send the updated data to the PHP handler
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../handlers/actualizar_usuario_handler.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.open('POST', '../handlers/actualizar_usuario_handler.php', true)
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            guardarUsuario(idUser);
+            location.reload();
         }
     };
 
@@ -61,8 +59,7 @@ const borrarUsuario = (idUser) => {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById(idUser).style.display='none'
-            document.getElementById(`${idUser}-edit`).style.display='none'
+            location.reload();
         }
     }
 

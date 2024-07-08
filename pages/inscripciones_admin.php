@@ -11,7 +11,34 @@
     $crumb = $crumb;
     include_once("../components/navbar.php");
     ?>
-
+ <?php if(isset($_COOKIE['creado']) && $_COOKIE['creado'] == 1): 
+        setcookie('creado', 0, time() - 3600);
+    ?>
+        <div id="banner-creado">
+            EL TORNEO SE HA CREADO CORRECTAMENTE.
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['actualizado']) && $_COOKIE['actualizado'] == 1): 
+        setcookie('actualizado', 0, time() - 3600);
+    ?>
+        <div id="banner-actualizado">
+            EL JUGADOR SE HA INSCRITO CORRECTAMENTE.
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['eliminado']) && $_COOKIE['eliminado'] == 1): 
+        setcookie('eliminado', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+        EL JUGADOR SE HA BORRADO DEL TORNEO.
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['error']) && $_COOKIE['error'] == 1): 
+        setcookie('error', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+        ESTE TORNEO YA SE HA JUGADO. POR FAVOR, ESCOGE OTRO.
+        </div>
+    <?php endif; ?>
     <section id="middle-section">
         <div id="admin-wrapper">
             <div id="admin-inscripciones-header">

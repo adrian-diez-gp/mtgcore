@@ -13,7 +13,27 @@
 
     include_once("../components/inscripciones_desc.php");
     ?>
-
+ <?php if(isset($_COOKIE['creado']) && $_COOKIE['creado'] == 1): 
+        setcookie('creado', 0, time() - 3600);
+    ?>
+        <div id="banner-creado">
+            TE HAS INSCRITO CORRECTAMENTE!
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['eliminado']) && $_COOKIE['eliminado'] == 1): 
+        setcookie('eliminado', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+            TE HAS BORRADO DEL TORNEO.
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_COOKIE['error']) && $_COOKIE['error'] == 1): 
+        setcookie('error', 0, time() - 3600);
+    ?>
+        <div id="banner-eliminado">
+            ESTE TORNEO YA SE HA JUGADO.
+        </div>
+    <?php endif; ?>
     <section id="middle-section">
         <div id="perfil-wrapper">
             <div id="datos-personales-article-wrapper">

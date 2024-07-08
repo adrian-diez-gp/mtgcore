@@ -1,31 +1,23 @@
-const form = document.getElementById('loginForm')
+const form = document.getElementById('loginForm');
 
-form.addEventListener('submit', async event => {
-    console.log("starting login")
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-    const username = document.getElementById("username").value
-    const password = document.getElementById("password").value
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    console.log("username:"+username)
-    console.log(window.location.href)
-
-    const req = new XMLHttpRequest()
-    req.open("POST", "../handlers/login_handler.php?username=" + username + "&password=" + password, true)
-    req.setRequestHeader("Content-Type", "multipart/form-data")
+    const req = new XMLHttpRequest();
+    req.open("POST", "../handlers/login_handler.php", true);
+    req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     req.onreadystatechange = () => {
         if (req.readyState === 4 && req.status === 200) {
-            const res = JSON.parse(req.responseText)
+            const res = JSON.parse(req.responseText);
             if (res.success) {
-                document.cookie = `username=${res.user.username}; path=/; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
-                document.cookie = `role=${res.user.role}; path=/; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
                 window.location.href = "home.php";
+            } else {
+                location.reload(); // Refresh the page if login fails
             }
-        } else {
-            document.getElementById("error-message").style.display = "block";
-            document.getElementById("error-message").classList.add("error");
-
-            alert("Login failed. Please check your username and password.");
         }
-    }
-    await req.send();
-})
+    };
+    req.send(`username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+});

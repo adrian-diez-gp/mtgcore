@@ -79,7 +79,7 @@ class DB {
         $result = $loginSql->get_result();
 
         if ($result->num_rows == 0) {
-            $res = var_dump(array("success" => false, "message" => "Incorrect username or password"));
+            $res = array("success" => false, "message" => "Incorrect username or password");
             return $res;
         }
 

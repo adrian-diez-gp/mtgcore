@@ -22,22 +22,18 @@
         $apellidos = htmlspecialchars(trim($apellidos));
         $password = trim($password);
 
-        print_r('handler output: ');
-        print_r($_POST);
-
         if(!empty($username) && !empty($password) && !empty($email) && !empty($nombre) && !empty($apellidos)) {
             if (DB::emailExists($email)) {
                 echo "Email already exists.";
                 return;
             }
             if (DB::usernameExists($username)) {
-                echo "Nombre de usuario elegido.";
+                echo "Nombre de usuario ya elegido.";
                 return;
             }
             echo "Email does not exist. Proceeding with registration.";
             $user = DB::register($nombre, $apellidos, $rol, $email, $username, $password)['user'];
 
-            print_r($user);
             if ($sourcePage === 'users_admin.php') {
                 setcookie('creado', 1, time() + 5, '/');
                 header("Location: ../pages/users_admin.php");

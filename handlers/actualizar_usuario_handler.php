@@ -11,22 +11,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $telefono = $_POST['telefono'];
     } else {
         $telefono = '';
-    }
+    };
     if ($_POST['fecha_nacimiento']){
         $fecha_nacimiento = $_POST['fecha_nacimiento'];
     } else {
         $fecha_nacimiento = '';
-    }
+    };
     if ($_POST['sexo']){
         $sexo = $_POST['sexo'];
     } else {
         $sexo = 'nsnc';
-    }
+    };
     if ($_POST['direccion']){
         $direccion = $_POST['direccion'];
     } else {
         $direccion = '';
-    }
+    };
 
 
     $username = htmlspecialchars(trim($username));
@@ -38,8 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($idUser) && !empty($username) && !empty($nombre) && !empty($apellidos)) {
         DB::actualizarUsuario($username, $nombre, $apellidos, $telefono, $fecha_nacimiento, $sexo, $direccion, $idUser);
         setcookie('actualizado', 1, time() + 5, '/');
+        exit();
     } else {
+        setcookie('error', 1, time() + 5, '/');
         echo "Todos los campos son obligatorios.";
-    }
+    };
 }
 ?>
